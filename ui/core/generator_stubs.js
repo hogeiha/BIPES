@@ -10222,7 +10222,7 @@ Blockly.Python['bus_step_motor_continuous'] = function(block) {
         code += '\tstep_motor.start_continuous_motion(' + motor_id + ', ' + direction + ', ' + driver_mode + ', ' + speed + ')\n';
         code += '\tdir_text = "Forward" if ' + direction + ' == 0 else "Backward"\n';
         code += '\tmode_text = ["Single Phase", "Double Phase", "Half Step"][' + driver_mode + ']\n';
-        code += '\tprint(f"Motor ' + motor_id + ' continuous motion: {dir_text}, {mode_text}, Speed={speed} pulses/s")\n';
+        code += '\tprint(f"Motor ' + motor_id + ' continuous motion: {dir_text}, {mode_text}, Speed=' + speed + ' pulses/s")\n';
         code += 'except ValueError as e:\n';
         code += '\tprint("Continuous motion error:", e)\n';
         return code;
@@ -10254,7 +10254,7 @@ Blockly.Python['bus_step_motor_step_motion'] = function(block) {
         code += '\tstep_motor.start_step_motion(' + motor_id + ', ' + direction + ', ' + driver_mode + ', ' + speed + ', ' + steps + ')\n';
         code += '\tdir_text = "Forward" if ' + direction + ' == 0 else "Backward"\n';
         code += '\tmode_text = ["Single Phase", "Double Phase", "Half Step"][' + driver_mode + ']\n';
-        code += '\tprint(f"Motor ' + motor_id + ' step motion: {dir_text}, {mode_text}, Speed={speed} pulses/s, Steps={steps}")\n';
+        code += '\tprint(f"Motor ' + motor_id + ' step motion: {dir_text}, {mode_text}, Speed=' + speed + ' pulses/s, Steps={steps}")\n';
         code += 'except ValueError as e:\n';
         code += '\tprint("Step motion error:", e)\n';
         return code;
